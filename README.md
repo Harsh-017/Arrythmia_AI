@@ -37,22 +37,25 @@ The following libraries are utilized in the Arrhythmia AI project:
 - keras: For loading and using the deep learning model.
 
 ## Installation
-Clone the repository:
 
-bash
-git clone https://github.com/your-username/Arrhythmia-AI.git
-cd Arrhythmia-AI
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/Arrhythmia-AI.git
+   cd Arrhythmia-AI
 
+2. **Create and activate a virtual environment:**
+   ```bash
+   python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   
 ## Usage
 - **Upload ECG Data**: Users can upload images of different types of arrhythmias through the GUI.
 - **View Results**: The model will analyze the uploaded images and provide predictions regarding the type of arrhythmia detected.
-
-## GUI Functionality
-The GUI for Arrhythmia AI allows users to:
-- Upload an image of an ECG signal.
-- The uploaded image is displayed in the interface.
-- Once an image is uploaded, the user can click a "Detect Image" button to trigger the model's prediction.
-- The model will classify the uploaded image and display whether it is "Uninfected" or provide a diagnosis if it detects an arrhythmia.
 
 ## Model Information
 - **Model**: Convolutional Neural Network (CNN)
@@ -61,6 +64,51 @@ The GUI for Arrhythmia AI allows users to:
 - **Validation Accuracy**: 95%
 
 The CNN model was trained on ECG data from the MIT-BIH Arrhythmia Database to detect multiple types of heart diseases. The model architecture includes multiple convolutional layers to extract features from ECG waveforms, followed by fully connected layers for classification.
+
+## GUI Functionality
+The GUI for Arrhythmia AI allows users to:
+- Upload an image of an ECG signal.
+- The uploaded image is displayed in the interface.
+- Once an image is uploaded, the user can click a "Detect Image" button to trigger the model's prediction.
+- The model will classify the uploaded image and display whether it is "Uninfected" or provide a diagnosis if it detects an arrhythmia.
+
+## Example Code Snippet
+```python
+import tkinter as tk
+from tkinter import filedialog
+from tkinter import *
+from PIL import Image, ImageTk
+import numpy as np
+from keras.models import load_model
+
+# Initialising GUI
+top = tk.Tk()
+top.geometry('800x600')
+top.title('Heart Disease Detection')
+top.configure(background='#F0E68C')
+
+# Loading the model
+model = load_model('model_vgg19.h5')
+
+# Function to detect heart disease
+def detect(file_path):
+    # [Detection logic here]
+
+# Function to show detect image button
+def show_detect_buttons(file_path):
+    # [Button logic here]
+
+# Function to upload image
+def upload_image():
+    # [Upload logic here]
+
+# GUI components
+# [GUI components setup here]
+
+top.mainloop()
+
+```
+
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
@@ -72,3 +120,6 @@ Contributions are welcome! Please follow these steps:
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
