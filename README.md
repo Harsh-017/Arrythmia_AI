@@ -1,4 +1,4 @@
-# Arrhythmia AI - AI-Powered ECG Disease Detection
+# Arrhythmia AI - AI Powered ECG Disease Detection
 
 Arrhythmia AI is an AI-based system designed to detect heart diseases using Electrocardiogram (ECG) data. It utilizes a convolutional neural network (CNN) to classify ECG signals and identify potential arrhythmias and other heart-related conditions.
 
